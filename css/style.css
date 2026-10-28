@@ -2344,15 +2344,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---------- Login with Email Modal ---------- */
+#loginModal {
+    z-index: 2000 !important;
+}
+
+#loginModal:not([hidden]) {
+    display: flex !important;
+}
+
 .modal-dialog-auth {
-    width: min(440px, 100%);
+    width: min(440px, 94%);
     border-radius: 20px;
     background: #ffffff;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .auth-modal-content {
     padding: 34px 32px 38px;
     background: #ffffff;
+    overflow-y: auto;
+    max-height: calc(90vh - 20px);
 }
 
 .auth-header {
@@ -2620,32 +2633,62 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate(-50%, 0);
 }
 
-/* ---------- Responsive Breakpoints ---------- */
+/* ---------- Comprehensive Responsive System ---------- */
+
+/* Hamburger Menu Icon Animation */
+.menu-toggle span {
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    transform-origin: center;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Tablet & Medium Screens (<= 960px) */
 @media (max-width: 960px) {
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
+    .hero-text {
+        text-align: left;
+    }
+
     .modal-layout {
         grid-template-columns: 1fr;
+        gap: 28px;
     }
 
     .modal-sidebar {
         position: static;
         order: -1;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    .sidebar-card {
+        max-width: 480px;
+        margin: 0 auto;
     }
 
     .modal-content {
-        padding: 24px 20px 30px;
+        padding: 28px 24px 34px;
     }
 }
 
+/* Tablets & Mobile Navigation (<= 860px) */
 @media (max-width: 860px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
+    .nav-inner {
+        height: 66px;
     }
 
     .menu-toggle {
@@ -2654,15 +2697,22 @@ h1, h2, h3, h4, h5, h6 {
 
     .nav-links {
         position: absolute;
-        top: 72px;
+        top: 66px;
         left: 0;
         right: 0;
         flex-direction: column;
         gap: 0;
         background: #ffffff;
         border-bottom: 1px solid var(--line);
-        box-shadow: var(--shadow-md);
+        box-shadow: var(--shadow-lg);
         display: none;
+        z-index: 100;
+        animation: navSlideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes navSlideDown {
+        0% { opacity: 0; transform: translateY(-10px); }
+        100% { opacity: 1; transform: translateY(0); }
     }
 
     .nav-links.open {
@@ -2670,24 +2720,355 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .nav-links .nav-link {
-        padding: 14px 5%;
+        padding: 14px 24px;
         border-radius: 0;
         border-top: 1px solid var(--line-subtle);
         width: 100%;
+        font-size: 1rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
     }
 }
 
+/* Standard Mobile Screens (<= 640px) */
 @media (max-width: 640px) {
+    .container {
+        width: 92%;
+    }
+
     .section {
+        padding: 56px 0;
+    }
+
+    .section-header h2 {
+        font-size: 1.7rem;
+    }
+
+    .section-sub {
+        font-size: 0.95rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 44px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+        margin-bottom: 16px;
+    }
+
+    .hero-lead {
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn-hero {
+        width: 100%;
+        padding: 13px 20px;
+        font-size: 0.95rem;
+    }
+
+    .hero-proof-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 16px;
+    }
+
+    .lesson-mockup pre {
+        padding: 16px 14px;
+        font-size: 0.78rem;
+        line-height: 1.6;
+    }
+
+    .lesson-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .lesson-progress-info {
+        width: 100%;
+    }
+
+    /* Toolbar & Search */
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .chips-wrapper {
+        width: 100%;
+        scrollbar-width: none;
+    }
+
+    .chips-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .search-box-wrapper {
+        width: 100%;
+    }
+
+    #search {
+        font-size: 16px; /* Prevents iOS Safari auto-zoom */
+        padding: 11px 36px 11px 40px;
+    }
+
+    .results-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 20px;
+    }
+
+    /* Course Cards */
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .card-thumb {
+        height: 190px;
+    }
+
+    .card-body {
+        padding: 18px 16px;
+    }
+
+    .card-title {
+        min-height: auto;
+    }
+
+    .card-actions {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 8px;
+    }
+
+    .btn-details,
+    .add-btn {
+        padding: 9px 8px;
+        font-size: 0.82rem;
+    }
+
+    /* Modals as Mobile Bottom Sheets */
+    .modal-backdrop {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    .modal-dialog {
+        width: 100%;
+        max-height: 92vh;
+        border-radius: 20px 20px 0 0;
+        animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalSlideUp {
+        0% { transform: translateY(100%); }
+        100% { transform: translateY(0); }
+    }
+
+    .modal-close-btn {
+        top: 12px;
+        right: 12px;
+        width: 34px;
+        height: 34px;
+        font-size: 1.3rem;
+    }
+
+    .modal-content {
+        padding: 22px 18px 36px;
+    }
+
+    .modal-course-title {
+        font-size: 1.5rem;
+    }
+
+    .modal-stats-bar {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 12px 14px;
+    }
+
+    .learn-section {
+        padding: 18px 16px;
+    }
+
+    .learn-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .curriculum-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .modules-accordion .accordion-header {
+        padding: 12px 14px;
+        gap: 10px;
+    }
+
+    .accordion-title-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+    }
+
+    .topic-item {
+        padding: 10px 12px 10px 24px;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .topic-title {
+        width: 100%;
+    }
+
+    .topic-duration {
+        margin-left: auto;
+    }
+
+    .instructor-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 16px;
+    }
+
+    .instructor-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Auth Modal on Mobile */
+    .modal-dialog-auth {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        max-height: 94vh;
+    }
+
+    .auth-modal-content {
+        padding: 28px 20px 36px;
+    }
+
+    .auth-modal-content input {
+        font-size: 16px;
+    }
+
+    /* Cart Drawer on Mobile */
+    .cart-drawer {
+        width: 100%;
+    }
+
+    .cart-drawer-header,
+    .cart-drawer-body,
+    .cart-drawer-footer {
+        padding: 16px;
+    }
+
+    /* Why & Reviews */
+    .why-list,
+    .review-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .why-card,
+    .review-card {
+        padding: 22px 18px;
+    }
+
+    /* CTA Section */
+    .cta {
         padding: 60px 0;
+    }
+
+    .cta-inner h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-form input {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .cta-form button {
+        width: 100%;
+    }
+
+    /* Toast */
+    .toast {
+        width: min(92%, 360px);
+        font-size: 0.86rem;
+        padding: 10px 18px;
+        bottom: 18px;
+    }
+}
+
+/* Small Mobile Screens (<= 440px) */
+@media (max-width: 440px) {
+    .nav-inner {
+        gap: 12px;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .cart-label {
+        display: none;
+    }
+
+    .cart-btn {
+        padding: 7px 10px;
+    }
+
+    .btn-login {
+        padding: 6px 12px;
+        font-size: 0.82rem;
+    }
+
+    .user-name-short {
+        display: none;
+    }
+
+    .user-avatar-btn {
+        padding: 4px;
+        border-radius: 50%;
+    }
+
+    .user-avatar-btn .chevron-down {
+        display: none;
     }
 
     .card-actions {
         grid-template-columns: 1fr 1fr;
     }
 
-    .modal-stats-bar {
-        grid-template-columns: 1fr 1fr;
+    .btn-details span {
+        font-size: 0.78rem;
+    }
+
+    .add-btn {
+        font-size: 0.78rem;
     }
 }
 
