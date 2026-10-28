@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnHub - Master In-Demand Tech & Design Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#top" class="logo" aria-label="LearnHub Home">
+        <span class="logo-mark">&lt;/&gt;</span>
+        <span class="logo-text">Learn<span>Hub</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#courses" class="nav-link active">Courses</a>
+        <a href="#why" class="nav-link">Why LearnHub</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Open shopping cart">
+          <svg class="cart-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-label">Cart</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="btn btn-dark btn-small btn-login" id="loginBtn">Log in</button>
+        <div class="user-menu-wrapper" id="userMenuWrapper" hidden>
+          <button class="user-avatar-btn" id="userAvatarBtn" aria-label="Open user menu" aria-expanded="false">
+            <span class="user-avatar-initial" id="userAvatarInitial">U</span>
+            <span class="user-name-short" id="userNameShort">Account</span>
+            <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="user-dropdown" id="userDropdown" hidden>
+            <div class="dropdown-header">
+              <strong id="dropdownUserName">User Name</strong>
+              <span id="dropdownUserEmail">user@example.com</span>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a href="#courses" class="dropdown-item" id="dropdownMyCourses">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              <span>Browse Courses</span>
+            </a>
+            <button class="dropdown-item logout-item" id="dropdownLogoutBtn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+              <span>Log out</span>
+            </button>
+          </div>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open mobile menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>Real-World Project Curriculum</span>
+          </div>
+          <h1>Learn the skill, <span class="text-gradient">ship the project.</span></h1>
+          <p class="hero-lead">Short, practical courses taught by working tech leads and senior designers. Every course is broken into comprehensive syllabus topics with code-along projects.</p>
+          
+          <div class="hero-buttons">
+            <a href="#courses" class="btn btn-accent btn-hero">
+              <span>Browse All Courses</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#why" class="btn btn-outline btn-hero">See How It Works</a>
+          </div>
+
+          <div class="hero-proof-bar">
+            <div class="avatar-stack" aria-hidden="true">
+              <span class="avatar av-1">JD</span>
+              <span class="avatar av-2">PN</span>
+              <span class="avatar av-3">CA</span>
+              <span class="avatar av-4">JS</span>
+            </div>
+            <div class="proof-details">
+              <div class="proof-stars">★★★★★</div>
+              <p><strong>4.8 / 5</strong> average rating from <strong>12,000+</strong> students</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO LESSON PREVIEW -->
+        <div class="lesson-mockup" aria-hidden="true">
+          <div class="lesson-bar">
+            <div class="window-dots">
+              <i class="dot-red"></i>
+              <i class="dot-yellow"></i>
+              <i class="dot-green"></i>
+            </div>
+            <span class="file-tab">lesson-04-render.js</span>
+            <span class="live-pill">Active</span>
+          </div>
+          <pre><code><span class="c">// 1. Load syllabus topics & curriculum</span>
+<span class="k">const</span> course = <span class="f">loadCourse</span>(<span class="s">"fullstack-dev"</span>);
+
+<span class="c">// 2. Render interactive modules with preview</span>
+course.modules.<span class="f">forEach</span>(module =&gt; {
+  <span class="k">const</span> card = <span class="f">renderAccordion</span>(module);
+  curriculum.<span class="f">mount</span>(card);
+});
+
+<span class="c">// 3. Ready to ship portfolio project!</span>
+<span class="f">console</span>.<span class="f">log</span>(<span class="s">"✓ Project live & deployed"</span>);</code></pre>
+          <div class="lesson-footer">
+            <div class="lesson-progress-info">
+              <span>Module 4 of 5 &bull; 64 Topics</span>
+              <div class="progress"><div style="width: 78%"></div></div>
+            </div>
+            <span class="badge-tag">Interactive</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="courses section" id="courses">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-tag">Explore Curriculum</span>
+            <h2>Pick a course and start learning today</h2>
+            <p class="section-sub">Filter by topic, search specific technologies, or click any course to explore the full syllabus.</p>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <div class="chips-wrapper">
+            <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+          </div>
+          
+          <div class="search-box-wrapper">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" id="search" placeholder="Search courses, skills (e.g. React, SQL, Figma)..." aria-label="Search courses and topics">
+            <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear search query" hidden>&times;</button>
+          </div>
+        </div>
+
+        <div class="results-bar">
+          <span class="results-count" id="resultsCount">Showing 8 courses</span>
+          <span class="results-tip">💡 Click any card or "View Syllabus" to preview lessons</span>
+        </div>
+
+        <div class="course-grid" id="courseGrid"></div>
+        
+        <div class="empty-state" id="empty" hidden>
+          <div class="empty-icon">🔍</div>
+          <h3>No matching courses found</h3>
+          <p>We couldn't find courses matching your search. Try a different skill keyword or reset filters.</p>
+          <button class="btn btn-accent btn-small" id="resetFilterBtn">View All Courses</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="why section" id="why">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">The LearnHub Advantage</span>
+          <h2>What you get with every single course</h2>
+          <p class="section-sub">Designed for real-world builders, not test-takers.</p>
+        </div>
+
+        <div class="why-list">
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">🛠️</div>
+            <h3>Build as you learn</h3>
+            <p>Every course is organized around one production-ready project, so you finish with work you can showcase to employers.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">♾️</div>
+            <h3>Lifetime access & updates</h3>
+            <p>Pay once, keep the course forever. All future syllabus updates, new lessons, and source code files are included free.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">💬</div>
+            <h3>Ask the instructor</h3>
+            <p>Stuck on a tricky bug or concept? Ask directly in the lesson topic discussions and get instructor feedback within 24 hours.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon" aria-hidden="true">🏆</div>
+            <h3>Shareable Certificate</h3>
+            <p>Complete all course topics and assignments to earn a verified certificate you can embed on LinkedIn and resumes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Student Success</span>
+          <h2>What our graduates are saying</h2>
+          <p class="section-sub">Join thousands of students who leveled up their skills and landed tech roles.</p>
+        </div>
+
+        <div class="review-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"I knew the basics but never finished a full-stack project. This course made me build and deploy a live app in three weeks. Landed my first junior role last month!"</p>
+            <div class="review-author">
+              <span class="review-avatar" style="background:#0f766e">A</span>
+              <div>
+                <strong>Aarav Sharma</strong>
+                <span>Front-End Developer &bull; Verified Learner</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Clear lessons, zero fluff. The UI design and Figma courses helped me overhaul my client portfolio. I received two freelance contract offers within days."</p>
+            <div class="review-author">
+              <span class="review-avatar" style="background:#be185d">M</span>
+              <div>
+                <strong>Meera Patel</strong>
+                <span>Freelance Product Designer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"The structured topic breakdown is phenomenal. The instructor answered my query about database indexing on the very same day. Best course investment I've made."</p>
+            <div class="review-author">
+              <span class="review-avatar" style="background:#1d4ed8">D</span>
+              <div>
+                <strong>Daniel Miller</strong>
+                <span>Software Engineer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-inner">
+          <span class="cta-pill">Get Started Today</span>
+          <h2>Ready to master a new skill?</h2>
+          <p>Create a free account, preview the first lesson of any course, and start building your future today.</p>
+          <form class="cta-form" id="signupForm">
+            <input type="email" id="email" placeholder="Enter your email address" aria-label="Email address" required>
+            <button type="submit" class="btn btn-accent">Create Free Account</button>
+          </form>
+          <p class="cta-guarantee">🛡️ Free access to preview lessons &bull; No credit card required</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo">
+          <span class="logo-mark">&lt;/&gt;</span>
+          <span class="logo-text">Learn<span>Hub</span></span>
+        </a>
+        <p>Practical, project-driven online courses taught by industry veterans for people who want to build real products.</p>
+      </div>
+      <div>
+        <h4>Explore Courses</h4>
+        <a href="#courses">Web Development</a>
+        <a href="#courses">UI/UX Design</a>
+        <a href="#courses">Data & Python</a>
+        <a href="#courses">Growth Marketing</a>
+      </div>
+      <div>
+        <h4>Help & Support</h4>
+        <a href="mailto:hello@learnhub.example">hello@learnhub.example</a>
+        <a href="#">Help Center & FAQs</a>
+        <a href="#">Terms & Privacy</a>
+      </div>
+    </div>
+    <div class="container copyright">&copy; 2026 LearnHub. Built with care for curious builders worldwide.</div>
+  </footer>
+
+  <!-- COURSE DETAILS MODAL -->
+  <div class="modal-backdrop" id="courseModal" role="dialog" aria-modal="true" aria-labelledby="modalCourseTitle" hidden>
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close course details">&times;</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer-backdrop" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle" hidden>
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <div class="cart-drawer-title-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <h3 id="cartDrawerTitle">Your Cart (<span id="cartDrawerCount">0</span>)</h3>
+        </div>
+        <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-drawer-body" id="cartDrawerBody"></div>
+      <div class="cart-drawer-footer" id="cartDrawerFooter">
+        <div class="cart-total-row">
+          <span>Subtotal:</span>
+          <span class="cart-total-amount" id="cartTotalAmount">$0</span>
+        </div>
+        <div class="cart-guarantee-badge">
+          <span>🛡️ 30-Day Money-Back Guarantee</span>
+        </div>
+        <button class="btn btn-accent btn-block" id="checkoutBtn">Proceed to Checkout</button>
+        <button class="btn btn-outline btn-block" id="clearCartBtn">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LESSON PREVIEW MODAL -->
+  <div class="modal-backdrop lesson-backdrop" id="lessonModal" role="dialog" aria-modal="true" aria-label="Topic Preview" hidden>
+    <div class="modal-dialog modal-dialog-sm">
+      <button class="modal-close-btn" id="lessonCloseBtn" aria-label="Close topic preview">&times;</button>
+      <div class="modal-content" id="lessonModalContent"></div>
+    </div>
+  </div>
+
+  <!-- LOGIN WITH EMAIL MODAL -->
+  <div class="modal-backdrop auth-backdrop" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle" hidden>
+    <div class="modal-dialog modal-dialog-auth">
+      <button class="modal-close-btn" id="loginCloseBtn" aria-label="Close login dialog">&times;</button>
+      <div class="auth-modal-content">
+        <div class="auth-header">
+          <div class="auth-brand-badge">
+            <span class="logo-mark">&lt;/&gt;</span>
+          </div>
+          <h2 id="authModalTitle">Welcome to LearnHub</h2>
+          <p id="authModalSubtitle">Sign in with your email to access your courses and tracks</p>
+        </div>
+
+        <!-- AUTH TABS: Sign In / Create Account -->
+        <div class="auth-tabs" role="tablist">
+          <button class="auth-tab active" id="tabSignIn" role="tab" aria-selected="true" type="button">Sign In</button>
+          <button class="auth-tab" id="tabSignUp" role="tab" aria-selected="false" type="button">Create Account</button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form class="auth-form" id="loginForm">
+          <div class="form-group" id="nameFieldGroup" hidden>
+            <label for="authName">Full Name</label>
+            <div class="input-icon-wrap">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="input-icon" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <input type="text" id="authName" placeholder="e.g. Alex Johnson" autocomplete="name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="authEmail">Email Address</label>
+            <div class="input-icon-wrap">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="input-icon" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <input type="email" id="authEmail" placeholder="name@example.com" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label for="authPassword">Password</label>
+              <button type="button" class="forgot-link-btn" id="forgotPasswordBtn">Forgot?</button>
+            </div>
+            <div class="input-icon-wrap">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="input-icon" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <input type="password" id="authPassword" placeholder="••••••••" required autocomplete="current-password">
+              <button type="button" class="password-toggle-btn" id="passwordToggleBtn" aria-label="Toggle password visibility">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="eyeIcon" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-options">
+            <label class="remember-wrap">
+              <input type="checkbox" id="authRemember" checked>
+              <span>Keep me signed in</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-accent btn-block btn-auth-submit" id="authSubmitBtn">
+            <span>Sign In with Email</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+
+        <div class="auth-divider">
+          <span>or sign in with magic link</span>
+        </div>
+
+        <button type="button" class="btn btn-outline btn-block magic-link-btn" id="magicLinkBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>Send Magic Link to Email</span>
+        </button>
+
+        <div class="auth-footer-text">
+          <p id="authSwitchPrompt">Don't have an account? <button type="button" class="switch-auth-mode-btn" id="switchAuthModeBtn">Sign up free</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
